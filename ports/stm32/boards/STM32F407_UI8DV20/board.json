@@ -1,0 +1,14 @@
+{
+    "deploy": [
+        "../deploy.md"
+    ],
+    "docs": "",
+    "features": [],
+    "images": [
+    ],
+    "mcu": "stm32f4",
+    "product": "Remote8D v2.0",
+    "thumbnail": "",
+    "url": "",
+    "vendor": "8Dromeda Productions"
+}
