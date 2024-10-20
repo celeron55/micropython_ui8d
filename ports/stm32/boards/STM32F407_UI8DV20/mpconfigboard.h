@@ -19,8 +19,8 @@
 // UART config
 #define MICROPY_HW_UART1_TX     (pin_A9)
 #define MICROPY_HW_UART1_RX     (pin_A10)
-//#define MICROPY_HW_UART2_TX     (pin_A2)
-//#define MICROPY_HW_UART2_RX     (pin_A3)
+#define MICROPY_HW_UART2_TX     (pin_D5)
+#define MICROPY_HW_UART2_RX     (pin_D6)
 //#define MICROPY_HW_UART2_RTS    (pin_A1)
 //#define MICROPY_HW_UART2_CTS    (pin_A0)
 #define MICROPY_HW_UART3_TX     (pin_D8)
@@ -70,8 +70,10 @@
 // LEDs
 // NOTE: We need to pretend like we have an LED for MicroPython to be able to
 // build.
-// Let's just say the LCD backlight output is a LED.
-#define MICROPY_HW_LED1             (pin_D12)
+// Let's just say the LCD backlight output is the SWDIO pin. At least that's
+// available in a connector and a low-power LED can be added to it in the
+// future.
+#define MICROPY_HW_LED1             (pin_A13)
 #define MICROPY_HW_LED_ON(pin)      (mp_hal_pin_high(pin))
 #define MICROPY_HW_LED_OFF(pin)     (mp_hal_pin_low(pin))
 // No LEDs other than the RS2812 data LED (NeoPixel) at PA6)
