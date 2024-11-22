@@ -1,3 +1,28 @@
+UI8D MicroPython port information
+=================================
+
+Compiling:
+`$ git clone https://github.com/celeron55/ui8d_micropython.git`
+`$ cd ui8d_micropython/ports/stm32`
+`$ vim boards/STM32F407_UI8DV20/mpconfigboard.h`
+`$ make -j6 BOARD=STM32F407_UI8DV20`
+`$ dfu-util -D build-STM32F407_UI8DV20/firmware.dfu`
+
+Plug in an SD card into the slot on the Remote8D board. The board will run code
+from the SD card, and when plugged into USB, the board will display the SD card
+contents instead of interna flash. This allows fitting much more code and
+resources for your program and you can update the program outside of the car, by
+taking the SD card with you. It will also work as an anti-theft device...
+
+Use `mpremote` to manage the board, OR `picocom --baud 115200 -l -e x /dev/ttyACM0`
+
+Install packages by copying them from https://github.com/micropython/micropython-lib/tree/master/micropython
+
+Test programs are located in the ui8d repository, under `test_firmware/.`
+
+Original MicroPython README follows
+===================================
+
 [![Unix CI badge](https://github.com/micropython/micropython/actions/workflows/ports_unix.yml/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![STM32 CI badge](https://github.com/micropython/micropython/actions/workflows/ports_stm32.yml/badge.svg)](https://github.com/micropython/micropython/actions?query=branch%3Amaster+event%3Apush) [![Docs CI badge](https://github.com/micropython/micropython/actions/workflows/docs.yml/badge.svg)](https://docs.micropython.org/) [![codecov](https://codecov.io/gh/micropython/micropython/branch/master/graph/badge.svg?token=I92PfD05sD)](https://codecov.io/gh/micropython/micropython)
 
 The MicroPython project
