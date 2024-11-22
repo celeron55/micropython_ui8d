@@ -582,8 +582,7 @@ class Display(object):
         if force_pixel_length is not None and right_align:
             total_length = 0
             for letter in iterable_text:
-                w, h = self.draw_letter(x, y, letter, font, color, background,
-                                        landscape, rotate_180)
+                buf, w, h = font.get_letter(letter, color, background, landscape)
                 total_length += w + spacing
 
             if total_length < force_pixel_length:
